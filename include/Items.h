@@ -120,7 +120,26 @@ namespace RE5MemTools {
 #pragma pack(pop)
 
     namespace Item {
+        /**
+         * @brief Acquires a stamped Archipelago location ID from an mItemSet.
+         * This relies on a patch forcing the game to stamp the ID to the padding at 0x1C, right after the mPosition vector.
+         *
+         * @param  itemSet:  pointer of the mItemSet
+         *
+         * @return int
+         */
         int GetAPLocationId(mItemSet* itemSet);
+        
+        /**
+         * @brief Modifies an item id and quantity for an mItemSet.
+         * This should be used upon receiving slot data from Archipelago for a particular check.
+         *
+         * @param  itemSet:  pointer of the mItemSet to modify
+         * @param  item:  RE5Item type to set
+         * @param  qty:  quantity to set
+         *
+         * @return void
+         */
         void SetItem(mItemSet* itemSet, RE5Item item, short qty = -1);
     };
 }
