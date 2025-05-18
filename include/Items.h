@@ -88,7 +88,7 @@ namespace RE5MemTools {
     private:
         char pad_6C[0x04];
     public:
-        mItemSet mItemSet;
+        RE5MemTools::mItemSet mItemSet;
     };
 
 #pragma pack(pop)
