@@ -5,8 +5,13 @@
 using namespace RE5MemTools;
 
 TEST_CASE("Check class sizes") {
-    REQUIRE(sizeof(mItemSet) == 0x11C);
-    REQUIRE(sizeof(mpInfo) == 0x18C);
+    if (sizeof(void*) == 4) {
+        REQUIRE(sizeof(mItemSet) == 0x11C);
+        REQUIRE(sizeof(mpInfo) == 0x18C);
+    } else {
+        REQUIRE(sizeof(mItemSet) == 0x124);
+        REQUIRE(sizeof(mpInfo) == 0x1A0);
+    }
 }
 
 TEST_CASE("Test GetAPLocationId") {
