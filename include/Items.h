@@ -20,7 +20,7 @@ namespace RE5MemTools {
     private:
         char pad_2C[0x24];
     public:
-        unsigned __int8 EffType;
+        unsigned char EffType;
     private:
         char pad_51[0x0F];
     public:
@@ -28,27 +28,27 @@ namespace RE5MemTools {
     private:
         char pad_6C[0x08];
     public:
-        __int16 ItemFlagNo;
-        unsigned __int16 ItemId;
-        __int16 ItemNum;
+        short ItemFlagNo;
+        unsigned short ItemId;
+        short ItemNum;
     private:
         char pad_7A[0x02];
     public:
-        unsigned __int16 SetType;
-        __int16 SetLotNo;
-        __int16 SetNo;
+        unsigned short SetType;
+        short SetLotNo;
+        short SetNo;
     private:
         char pad_82[0x0A];
     public:
-        unsigned __int8 LevelPower;
-        unsigned __int8 LevelFireSpeed;
-        unsigned __int8 LevelReloadSpeed;
-        unsigned __int8 LevelBulletMax;
-        unsigned __int8 LevelBulrRate;
-        unsigned __int8 LevelCritical;
-        unsigned __int8 LevelThrough;
-        unsigned __int8 LevelRange;
-        unsigned __int8 LevelScope;
+        unsigned char LevelPower;
+        unsigned char LevelFireSpeed;
+        unsigned char LevelReloadSpeed;
+        unsigned char LevelBulletMax;
+        unsigned char LevelBulrRate;
+        unsigned char LevelCritical;
+        unsigned char LevelThrough;
+        unsigned char LevelRange;
+        unsigned char LevelScope;
     private:
         char pad_95[0x4F];
     public:
