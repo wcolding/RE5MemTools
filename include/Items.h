@@ -4,6 +4,16 @@
 
 namespace RE5MemTools {
 
+    enum class RE5Item : unsigned short {
+        M92F = 258,
+        VZ61 = 259,
+        IthicaM37 = 260
+    };
+
+    inline bool operator==(RE5Item a, unsigned short b) {
+        return static_cast<unsigned short>(a) == b;
+    }
+
 #pragma pack(push)
 #pragma pack(1)
     class mItemSet {
