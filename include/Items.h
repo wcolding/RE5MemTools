@@ -5,9 +5,25 @@
 namespace RE5MemTools {
 
     enum class RE5Item : unsigned short {
-        M92F = 258,
-        VZ61 = 259,
-        IthicaM37 = 260
+        M92F_Handgun = 258,
+        VZ61_SMG = 259,
+        IthicaM37_Shotgun = 260,
+        S75_Rifle = 261,
+        HandGrenade = 262,
+        IncendiaryGrenade = 263,
+        FlashGrenade = 264,
+        SIG556_MachineGun = 265,
+        ProximityBomb = 266,
+        M29_Magnum = 267,
+        RocketLauncher = 269,
+        Longbow = 271,
+        P8_Handgun = 272,
+        SIGP226_Handgun = 273,
+        SamuraiEdge_Handgun = 274,
+        MP5_SMG = 275,
+        GatlingGun = 277,
+        M3_Shotgun = 278,
+        JailBreaker_Shotgun = 279
     };
 
     inline bool operator==(RE5Item a, unsigned short b) {

@@ -29,7 +29,7 @@ TEST_CASE("Test GetAPLocationId") {
 
 TEST_CASE("Test SetItem") {
     mItemSet itemSet;
-    Item::SetItem(&itemSet, RE5Item::IthicaM37);
-    REQUIRE(itemSet.ItemId == RE5Item::IthicaM37);
+    Item::SetItem(&itemSet, RE5Item::IthicaM37_Shotgun);
+    REQUIRE(itemSet.ItemId == RE5Item::IthicaM37_Shotgun);
     REQUIRE(itemSet.ItemNum == -1);
 }
