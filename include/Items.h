@@ -105,5 +105,6 @@ namespace RE5MemTools {
 
     namespace Item {
         int GetAPLocationId(mItemSet* itemSet);
+        void SetItem(mItemSet* itemSet, RE5Item item, short qty);
     };
 }

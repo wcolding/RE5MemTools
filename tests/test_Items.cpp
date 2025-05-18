@@ -26,3 +26,9 @@ TEST_CASE("Test GetAPLocationId") {
 
     REQUIRE(Item::GetAPLocationId(&itemSet) == 12345);
 }
+
+TEST_CASE("Test SetItem") {
+    mItemSet itemSet;
+    Item::SetItem(&itemSet, RE5Item::IthicaM37, -1);
+    REQUIRE(itemSet.ItemId == RE5Item::IthicaM37);
+}
