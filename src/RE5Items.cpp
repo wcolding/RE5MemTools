@@ -1,4 +1,4 @@
-#include "Items.h"
+#include "RE5Items.h"
 
 namespace RE5MemTools {
     int Item::GetAPLocationId(mItemSet* itemSet) {

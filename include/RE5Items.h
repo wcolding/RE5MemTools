@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseClasses.h"
+#include "RE5BaseClasses.h"
 
 namespace RE5MemTools {
 

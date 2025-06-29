@@ -1,4 +1,4 @@
-#include "Text.h"
+#include "RE5Text.h"
 
 #include <cstdlib>
 

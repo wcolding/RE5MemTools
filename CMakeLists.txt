@@ -4,8 +4,8 @@ project(RE5MemTools VERSION 1.0.0)
 set(CMAKE_CXX_STANDARD 23)
 
 add_library(RE5MemTools STATIC
-    src/Items.cpp
-    src/Text.cpp
+    "src/RE5Items.cpp"
+    "src/RE5Text.cpp"
 )
 target_include_directories(RE5MemTools PRIVATE include)
 

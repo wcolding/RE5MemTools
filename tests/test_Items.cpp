@@ -1,6 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 
-#include "Items.h"
+#include "RE5Items.h"
 
 using namespace RE5MemTools;
 
