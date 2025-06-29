@@ -17,7 +17,7 @@ TEST_CASE("Test EncryptString") {
 
 TEST_CASE("Test DecryptString") {
     int* encrypted = EncryptString("Testy westy");
-    std::string decrypted = DecryptString(encrypted, 11);
+    std::string decrypted = DecryptString(encrypted);
 
     REQUIRE(decrypted == "Testy westy");
 
