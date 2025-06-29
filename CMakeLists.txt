@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_library(RE5MemTools STATIC
     src/Items.cpp
+    src/Text.cpp
 )
 target_include_directories(RE5MemTools PRIVATE include)
 
@@ -20,6 +21,7 @@ FetchContent_MakeAvailable(Catch2)
 
 add_executable(tests 
     tests/test_Items.cpp
+    tests/test_Text.cpp
 )
 target_include_directories(tests PRIVATE include)
 
