@@ -1,16 +1,16 @@
 ﻿{
-	"configurations": [
-		{
-			"name": "x86-Release",
-			"generator": "Ninja",
-			"configurationType": "RelWithDebInfo",
-			"buildRoot": "${projectDir}\\out\\build\\${name}",
-			"installRoot": "${projectDir}\\out\\install\\${name}",
-			"cmakeCommandArgs": "",
-			"buildCommandArgs": "",
-			"ctestCommandArgs": "--verbose",
-			"inheritEnvironments": [ "msvc_x86" ],
-			"cmakeExecutable": "C:/Program Files/CMake/bin/cmake.exe"
-		}
-	]
+  "configurations": [
+    {
+      "name": "x86-Release",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "buildRoot": "${projectDir}\\build",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "--verbose",
+      "inheritEnvironments": [ "msvc_x86" ],
+      "cmakeExecutable": "C:/Program Files/CMake/bin/cmake.exe"
+    }
+  ]
 }
