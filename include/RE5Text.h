@@ -3,10 +3,15 @@
 #include <string>
 
 #define RE5_MAX_STRING_LENGTH 32
-#define RE5_STRING_END 0x04010000
 
 namespace RE5MemTools {
     namespace Text {
+
+        /**
+         * @brief Denotes the end of an encrypted string
+         */
+        const int StrEnd = 0x04010000;
+
         /**
          * @brief Fetches a string of the specified length from an encrypted string object
          *

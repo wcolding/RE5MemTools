@@ -18,7 +18,7 @@ namespace RE5MemTools::Text {
             }
         }
 
-        encrypted[unencrypted.size()] = RE5_STRING_END;
+        encrypted[unencrypted.size()] = RE5MemTools::Text::StrEnd;
 
         return encrypted;
     }
@@ -27,7 +27,7 @@ namespace RE5MemTools::Text {
         std::string decrypted;
         int index = 0;
         for (int i = 0; i < RE5_MAX_STRING_LENGTH; i++) {
-            if (encrypted[i] == RE5_STRING_END)
+            if (encrypted[i] == RE5MemTools::Text::StrEnd)
                 break;
             index = encrypted[i] / 2;
             if (index < charMap.length()) {
