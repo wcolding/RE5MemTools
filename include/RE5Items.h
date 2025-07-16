@@ -30,6 +30,19 @@ namespace RE5MemTools {
         return static_cast<unsigned short>(a) == b;
     }
 
+    enum class RE5SetType : unsigned short {
+        Spawn = 0,
+        EnemyDrop = 1,
+        Chest = 2,
+        Breakable = 2,
+        Suitcase = 3,
+        NoPickup = 4
+    };
+
+    inline bool operator==(RE5SetType a, unsigned short b) {
+        return static_cast<unsigned short>(a) == b;
+    }
+
 #pragma pack(push)
 #pragma pack(1)
     class mItemSet {
