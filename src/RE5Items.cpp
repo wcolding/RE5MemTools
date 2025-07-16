@@ -6,7 +6,7 @@ namespace RE5MemTools {
         return *intPtr;
     }
 
-    void Item::SetItem(mItemSet* itemSet, RE5Item item, short qty) {
+    void __fastcall Item::SetItem(mItemSet* itemSet, RE5Item item, short qty) {
         itemSet->ItemId = static_cast<unsigned short>(item);
         itemSet->ItemNum = qty;
     }
