@@ -57,7 +57,23 @@ namespace RE5MemTools {
     public:
         Vector3 mAngle;
     private:
-        char pad_2C[0x24];
+        char pad_2C[0x04];
+    public:
+        bool AutoPosition;
+    private:
+        char pad_31[0x07];
+    public:
+        bool HitAuto;
+    private:
+        char pad_39[0x07];
+    public:
+        bool NoCheckOba;
+    private:
+        char pad_41[0x07];
+    public:
+        bool NoCheckEff;
+    private:
+        char pad_49[0x07];
     public:
         unsigned char EffType;
     private:
