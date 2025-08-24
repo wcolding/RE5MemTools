@@ -17,7 +17,13 @@ FetchContent_Declare(
     GIT_TAG         v1.3.1
 )
 
-FetchContent_MakeAvailable(Catch2 zlib)
+FetchContent_Declare(
+    json
+    GIT_REPOSITORY  https://github.com/nlohmann/json.git
+    GIT_TAG         v3.12.0
+)
+
+FetchContent_MakeAvailable(Catch2 zlib json)
 
 
 add_library(RE5MemTools STATIC
@@ -27,6 +33,7 @@ add_library(RE5MemTools STATIC
 )
 target_include_directories(RE5MemTools PRIVATE include)
 target_link_libraries(RE5MemTools PRIVATE zlibstatic)
+target_link_libraries(RE5MemTools PRIVATE nlohmann_json::nlohmann_json)
 
 add_executable(tests 
     tests/test_Items.cpp

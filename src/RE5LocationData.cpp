@@ -2,6 +2,9 @@
 #include <cstdio>
 #include "zlib.h"
 
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
 namespace RE5MemTools::LocationData {
     int DecompressJSONFromFile(std::string filePath, std::string& out) {
         // Open file
@@ -36,7 +39,18 @@ namespace RE5MemTools::LocationData {
         return LOC_DATA_OK;
     }
 
-    int GetLocationData(std::string fileName) {
-        return 0;
+    std::vector<Location> GetLocationData(std::string jsonString) {
+        auto locationData = json::parse(jsonString);
+        std::vector<Location> locations;
+
+        for (int i = 0; i < locationData.size(); i++) {
+            Location newLocation;
+            newLocation.id = locationData[i]["Location"];
+            newLocation.item = locationData[i]["Item"];
+            newLocation.qty = locationData[i]["Qty"];
+            locations.push_back(newLocation);
+        }
+
+        return locations;
     }
 }
