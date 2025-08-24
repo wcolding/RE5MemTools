@@ -3,12 +3,6 @@ project(RE5MemTools VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_library(RE5MemTools STATIC
-    "src/RE5Items.cpp"
-    "src/RE5Text.cpp"
-)
-target_include_directories(RE5MemTools PRIVATE include)
-
 Include(FetchContent)
 
 FetchContent_Declare(
@@ -17,11 +11,27 @@ FetchContent_Declare(
     GIT_TAG         v3.8.0
 )
 
-FetchContent_MakeAvailable(Catch2)
+FetchContent_Declare(
+    zlib
+    GIT_REPOSITORY  https://github.com/madler/zlib.git
+    GIT_TAG         v1.3.1
+)
+
+FetchContent_MakeAvailable(Catch2 zlib)
+
+
+add_library(RE5MemTools STATIC
+    "src/RE5Items.cpp"
+    "src/RE5Text.cpp"
+    "src/RE5LocationData.cpp"
+)
+target_include_directories(RE5MemTools PRIVATE include)
+target_link_libraries(RE5MemTools PRIVATE zlibstatic)
 
 add_executable(tests 
     tests/test_Items.cpp
     tests/test_Text.cpp
+    tests/test_LocationData.cpp
 )
 target_include_directories(tests PRIVATE include)
 
