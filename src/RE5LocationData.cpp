@@ -18,7 +18,7 @@ namespace RE5MemTools::LocationData {
         rewind(apre5File);
 
         // Get size of uncompressed package from header (4 bytes)
-        Bytef compressedData[fileLength - 4];
+        Bytef* compressedData = new Bytef[fileLength - 4];
         unsigned long packageSize = 0;
         fread(&packageSize, 4, 1, apre5File);
 
@@ -29,7 +29,7 @@ namespace RE5MemTools::LocationData {
         apre5File = nullptr;
 
         // Decompress package
-        char decompressedData[packageSize];
+        char* decompressedData = new char[packageSize];
         int result = uncompress(reinterpret_cast<Bytef*>(decompressedData), &packageSize, compressedData, fileLength - 4);
 
         if (result != Z_OK)
