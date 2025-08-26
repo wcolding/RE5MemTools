@@ -169,6 +169,6 @@ namespace RE5MemTools {
          *
          * @return void
          */
-        void __fastcall SetItem(mItemSet* itemSet, RE5Item item, short qty = -1);
+        void SetItem(mItemSet* itemSet, RE5Item item, short qty = -1);
     };
 }
