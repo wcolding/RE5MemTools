@@ -36,6 +36,8 @@ namespace RE5MemTools::LocationData {
             return LOC_DATA_ZLIB_FAILED;
 
         out = std::string(decompressedData, packageSize);
+        delete[] compressedData;
+        delete[] decompressedData;
         return LOC_DATA_OK;
     }
 
