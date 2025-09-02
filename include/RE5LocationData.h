@@ -7,7 +7,6 @@
 #define LOC_DATA_NOT_OPENED 1
 #define LOC_DATA_ZLIB_FAILED 2
 
-
 namespace RE5MemTools {
     namespace LocationData {
 
@@ -15,6 +14,10 @@ namespace RE5MemTools {
             int id;
             int item;
             int qty;
+        };
+
+        struct APRE5Header {
+            unsigned int unpackedSize = 0;
         };
 
         /**

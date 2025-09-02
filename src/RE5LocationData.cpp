@@ -18,24 +18,24 @@ namespace RE5MemTools::LocationData {
         rewind(apre5File);
 
         // Get size of uncompressed package from header (4 bytes)
-        Bytef* compressedData = new Bytef[fileLength - 4];
-        unsigned long packageSize = 0;
-        fread(&packageSize, 4, 1, apre5File);
+        APRE5Header header;
+        fread(&header.unpackedSize, 4, 1, apre5File);
 
-        // Read the rest of the file
+        // Allocate buffer for compressed data and read the rest of the file
+        Bytef* compressedData = new Bytef[fileLength - sizeof(APRE5Header)];
         fseek(apre5File, 4, SEEK_SET);
         fread(compressedData, fileLength - 4, 1, apre5File);
         fclose(apre5File);
         apre5File = nullptr;
 
         // Decompress package
-        char* decompressedData = new char[packageSize];
-        int result = uncompress(reinterpret_cast<Bytef*>(decompressedData), &packageSize, compressedData, fileLength - 4);
-
+        char* decompressedData = new char[header.unpackedSize];
+        int result = uncompress(reinterpret_cast<Bytef*>(decompressedData), reinterpret_cast<unsigned long*>(&header.unpackedSize), reinterpret_cast<Bytef*>(compressedData), fileLength - sizeof(APRE5Header));
+    
         if (result != Z_OK)
             return LOC_DATA_ZLIB_FAILED;
 
-        out = std::string(decompressedData, packageSize);
+        out = std::string(decompressedData, header.unpackedSize);
         delete[] compressedData;
         delete[] decompressedData;
         return LOC_DATA_OK;
