@@ -39,7 +39,7 @@ namespace RE5MemTools::LocationData {
             delete[] decompressedData;
         }
         else {
-            out = std::string(readData, header.unpackedSize);
+            out = std::string(readData, fileLength - sizeof(APRE5Header));
         }
 
         delete[] readData;
