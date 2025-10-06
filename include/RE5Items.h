@@ -89,7 +89,7 @@ namespace RE5MemTools {
     private:
         char pad_7A[0x02];
     public:
-        unsigned short SetType;
+        RE5SetType SetType;
         short SetLotNo;
         short SetNo;
     private:
