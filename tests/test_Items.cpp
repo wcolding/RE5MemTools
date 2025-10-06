@@ -29,7 +29,9 @@ TEST_CASE("Test GetAPLocationId") {
 
 TEST_CASE("Test SetItem") {
     mItemSet itemSet;
+    itemSet.SetType = RE5SetType::Suitcase;
     Item::SetItem(&itemSet, RE5Item::IthicaM37_Shotgun);
     REQUIRE(itemSet.ItemId == RE5Item::IthicaM37_Shotgun);
     REQUIRE(itemSet.ItemNum == -1);
+    REQUIRE(itemSet.AutoPosition == true);
 }
