@@ -19,7 +19,7 @@ namespace RE5MemTools {
         Longbow = 271,
         P8_Handgun = 272,
         SIGP226_Handgun = 273,
-        SamuraiEdge_Handgun = 274,
+        SamuraiEdge_DLC_Handgun = 274,
         MP5_SMG = 275,
         GatlingGun = 277,
         M3_Shotgun = 278,
