@@ -263,6 +263,35 @@ namespace RE5MemTools {
         RE5MemTools::mItemSet mItemSet;
     };
 
+    class mItem {
+    public:
+        unsigned int id;
+        int qty;
+        int max;
+    private:
+        char pad_0C[0x08];
+    public:
+        unsigned int slot;
+    private:
+        char pad_18[0x04];
+    public:
+        unsigned char firepower;
+    private:
+        char pad_1D;
+    public:
+        unsigned char reloadSpeed;
+    private:
+        char pad_1F[0x02];
+    public:
+        unsigned char critical;
+        unsigned char piercing;
+        unsigned char spread;
+        unsigned char scope;
+    private:
+        char pad_25[0x03];
+        void* unk_28; // Seems to have to do with the "fire" animation
+    };
+
 #pragma pack(pop)
 
     namespace Item {
