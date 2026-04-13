@@ -5,59 +5,71 @@
 namespace RE5MemTools {
 
     enum class RE5Item : unsigned short {
-        M92F_Handgun = 258,
-        VZ61_SMG = 259,
-        IthicaM37_Shotgun = 260,
-        S75_Rifle = 261,
-        HandGrenade = 262,
-        IncendiaryGrenade = 263,
-        FlashGrenade = 264,
-        SIG556_MachineGun = 265,
-        ProximityBomb = 266,
-        M29_Magnum = 267,
-        RocketLauncher = 269,
-        Longbow = 271,
-        P8_Handgun = 272,
-        SIGP226_Handgun = 273,
-        SamuraiEdge_DLC_Handgun = 274,
-        MP5_SMG = 275,
-        GatlingGun = 277,
-        M3_Shotgun = 278,
-        JailBreaker_Shotgun = 279,
-		Hydra_Shotgun = 281,
-		L_Hawk_Magnum = 282,
-		SnW_Magnum = 283,
-		HnK_PSG1_Rifle = 284,
-		AK74_MachineGun = 285,
-		M93R_Handgun = 286,
-		Px4_Handgun = 287,
-		Dragunov_SVD_Rifle = 288,
-		Flamethrower = 289,
-		Stun_Rod = 290,
-		SamuraiEdge_Handgun = 297,
-		Egg_Rotten = 310,
-		Egg_White = 316,
-		Egg_Brown = 317,
-		Egg_Gold = 318,
-		Ammo_Handgun = 513,
-		Ammo_Machinegun = 514,
-		Ammo_Shotgun = 515,
-		Ammo_Rifle = 516,
-		Ammo_Magnum = 521,
-		Ammo_GL_Explosive = 293,
-		Ammo_GL_Acid = 294,
-		Ammo_GL_Ice = 295,
-		Ammo_GL_Flame = 313,
-		Ammo_GL_Flash = 314,
-		Ammo_GL_Electric = 315,
-		Herb_Green = 769,
-		Herb_Red = 770,
-		Herb_FirstAid = 772,
-		Herb_GreenGreen = 775,
-		Herb_GreenRed = 777,
-		Vest_Bulletproof = 1542,
-		Vest_Melee = 1537,
-		Slate_Map = 1543,
+        Handgun_M92F              = 0x0102, // 258
+        Handgun_P8                = 0x0110, // 272
+        Handgun_P226              = 0x0111, // 273
+        Handgun_M93R              = 0x011E, // 286
+        Handgun_Px4               = 0x011F, // 287
+        Handgun_SamuraiEdgeWesker = 0x0129, // 297
+        Handgun_SamuraiEdgeBarry  = 0x0112, // 274 (DLC required)
+        
+        MachineGun_VZ61           = 0x0103, // 259
+        MachineGun_556            = 0x0109, // 265
+        MachineGun_MP5            = 0x0113, // 275
+        MachineGun_AK74           = 0x011D, // 285
+
+        Shotgun_M37               = 0x0104, // 260
+        Shotgun_M3                = 0x0116, // 278
+        Shotgun_JailBreaker       = 0x0117, // 279
+        Shotgun_Hydra             = 0x0119, // 281
+
+        Rifle_S75                 = 0x0105, // 261
+        Rifle_PSG1                = 0x011C, // 284
+        Rifle_DragunovSVD         = 0x0120, // 288
+
+        Magnum_M29                = 0x010B, // 267
+        Magnum_LightningHawk      = 0x011A, // 282
+        Magnum_M500               = 0x011B, // 283
+
+        Grenade_Hand              = 0x0106, // 262
+        Grenade_Incendiary        = 0x0107, // 263
+        Grenade_Flash             = 0x0108, // 264
+        ProximityBomb             = 0x010A, // 266
+
+        GrenadeLauncher           = 0x010C, // 268
+        RocketLauncher            = 0x010D, // 269
+        Longbow                   = 0x010F, // 271
+        GatlingGun                = 0x0115, // 277
+		Flamethrower              = 0x0121, // 289
+		StunRod                   = 0x0122, // 290
+
+		Ammo_Handgun              = 0x0201, // 513
+		Ammo_MachineGun           = 0x0202, // 514
+		Ammo_Shotgun              = 0x0203, // 515
+		Ammo_Rifle                = 0x0204, // 516
+		Ammo_Magnum               = 0x0209, // 521
+		Ammo_ExplosiveRounds      = 0x0206, // 518
+		Ammo_AcidRounds           = 0x0207, // 519
+		Ammo_NitrogenRounds       = 0x0208, // 520
+		Ammo_FlameRounds          = 0x020E, // 526
+		Ammo_FlashRounds          = 0x020F, // 527
+		Ammo_ElectricRounds       = 0x0210, // 528
+
+        Egg_Rotten                = 0x0136, // 310
+        Egg_White                 = 0x013C, // 316
+        Egg_Brown                 = 0x013D, // 317
+        Egg_Gold                  = 0x013E, // 318
+		Herb_Green                = 0x0301, // 769
+		Herb_Red                  = 0x0302, // 770
+		FirstAidSpray             = 0x0304, // 772
+		Herb_GG                   = 0x0307, // 775
+        Herb_GGG                  = 0x0308, // 776
+		Herb_GR                   = 0x0309, // 777
+
+        Vest_Melee                = 0x0601, // 1537
+		Vest_Bulletproof          = 0x0606, // 1542
+		
+        SlateMap                  = 0x0607, // 1543
 		Key_Furnace = 1283,
 		Key_Port = 1286,
 		Key_OldBuilding = 1289,
@@ -75,6 +87,7 @@ namespace RE5MemTools {
 		Key_WarriorSlate = 1299,
 		Key_BeastSlate = 1300,
 		Key_RaptorSlate = 1301,
+		
 		Gold_Large = 1025,
 		Gold_Small = 1026,
 		Gold_Bars = 1027,
