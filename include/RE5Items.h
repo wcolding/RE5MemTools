@@ -88,7 +88,7 @@ namespace RE5MemTools {
 		Key_BeastSlate = 1300,
 		Key_RaptorSlate = 1301,
 		
-		Gold_Large = 1025,
+        Gold_Large = 1025,
 		Gold_Small = 1026,
 		Gold_Bars = 1027,
 		Treasure_GoldRing = 1047,
@@ -162,6 +162,7 @@ namespace RE5MemTools {
 
 #pragma pack(push)
 #pragma pack(1)
+    // Describes items as they appear in the level
     class mItemSet {
 
     private:
@@ -227,6 +228,7 @@ namespace RE5MemTools {
         RE5Shape Shape;
     };
 
+    // Contains additional information for items as they appear in the level
     class mpInfo {
 
     private:
@@ -263,6 +265,7 @@ namespace RE5MemTools {
         RE5MemTools::mItemSet mItemSet;
     };
 
+    // Describes items as they appear in an inventory slot
     class mItem {
     public:
         unsigned int id;
