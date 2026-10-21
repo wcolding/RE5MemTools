@@ -1,0 +1,37 @@
+#include <catch2/catch_amalgamated.hpp>
+
+#include "RE5Items.h"
+
+using namespace RE5MemTools;
+
+TEST_CASE("Check class sizes") {
+    if (sizeof(void*) == 4) {
+        REQUIRE(sizeof(mItemSet) == 0x11C);
+        REQUIRE(sizeof(mpInfo) == 0x18C);
+    } else {
+        REQUIRE(sizeof(mItemSet) == 0x124);
+        REQUIRE(sizeof(mpInfo) == 0x1A0);
+    }
+}
+
+TEST_CASE("Test GetAPLocationId") {
+    mItemSet itemSet;
+    int buffer[12] = {
+        0, 0, 0, 0,
+        0, 0, 0, 12345,
+        0, 0, 0, 0
+    };
+
+    memcpy(&itemSet, &buffer, 0x30);
+
+    REQUIRE(Item::GetAPLocationId(&itemSet) == 12345);
+}
+
+TEST_CASE("Test SetItem") {
+    mItemSet itemSet;
+    itemSet.SetType = RE5SetType::Suitcase;
+    Item::SetItem(&itemSet, RE5Item::Shotgun_M37);
+    REQUIRE(itemSet.ItemId == RE5Item::Shotgun_M37);
+    REQUIRE(itemSet.ItemNum == -1);
+    REQUIRE(itemSet.AutoPosition == true);
+}
